@@ -30,4 +30,5 @@ jobs:
           server: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
+          local-dir: /dist
           server-dir: /prueba-ftp/
