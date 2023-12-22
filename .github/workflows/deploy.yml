@@ -24,17 +24,17 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Create .htaccess file
-        run: |
-          echo '<IfModule mod_rewrite.c>' > dist/.htaccess
-          echo '    RewriteEngine On' >> dist/.htaccess
-          echo '    RewriteCond %{REQUEST_FILENAME} !-f' >> dist/.htaccess
-          echo '    RewriteCond %{REQUEST_FILENAME} !-d' >> dist/.htaccess
-          echo '    RewriteRule ^ index.html [L,QSA]' >> dist/.htaccess
-          echo '</IfModule>' >> dist/.htaccess
+      # - name: Create .htaccess file
+      #   run: |
+      #     echo '<IfModule mod_rewrite.c>' > dist/.htaccess
+      #     echo '    RewriteEngine On' >> dist/.htaccess
+      #     echo '    RewriteCond %{REQUEST_FILENAME} !-f' >> dist/.htaccess
+      #     echo '    RewriteCond %{REQUEST_FILENAME} !-d' >> dist/.htaccess
+      #     echo '    RewriteRule ^ index.html [L,QSA]' >> dist/.htaccess
+      #     echo '</IfModule>' >> dist/.htaccess
 
-      # - name: Copy .htaccess to build directory
-      #   run: cp .htaccess dist/
+      - name: Copy .htaccess to build directory
+        run: cp .htaccess dist/
 
       - name: Deploy to FTP Server
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
