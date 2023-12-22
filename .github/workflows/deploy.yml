@@ -28,11 +28,10 @@ jobs:
         run: |
           echo '<IfModule mod_rewrite.c>' > dist/.htaccess
           echo '    RewriteEngine On' >> dist/.htaccess
-          echo '    RewriteBase /neotalentup/plataforma/' >> dist/.htaccess
           echo '    RewriteCond %{REQUEST_FILENAME} !-f' >> dist/.htaccess
           echo '    RewriteCond %{REQUEST_FILENAME} !-d' >> dist/.htaccess
-          echo '    RewriteRule ^(.*)$ index.html [L,QSA]' >> dist/.htaccess
-          echo '  </IfModule>' >> dist/.htaccess
+          echo '    RewriteRule ^ index.html [L,QSA]' >> dist/.htaccess
+          echo '</IfModule>' >> dist/.htaccess
 
       - name: Deploy to FTP Server
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
