@@ -7,7 +7,7 @@ import store from "./redux/store.ts";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   // <React.StrictMode>
-  <BrowserRouter basename="/sac/plataforma">
+  <BrowserRouter basename="/prueba-ftp">
     <Provider store={store}>
       <App />
     </Provider>
